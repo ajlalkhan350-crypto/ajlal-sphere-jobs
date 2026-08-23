@@ -2,39 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jobs Sphere — Verified matching for Saudi Arabia</title>
-  <meta name="description" content="Free for job seekers. Employers pay. No fake listings. Not Qiwa. Independent portal by Ajlal Khan. Urdu, Arabic, English." />
-  <meta name="theme-color" content="#1a6b4a" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Jobs Sphere — Saudi jobs without the scam tax</title>
+  <meta name="description" content="Jobs Sphere: free for job seekers in Saudi Arabia. Verified employers. Sphere AI Care. Not Qiwa." />
+  <meta name="theme-color" content="#157a52" />
   <link rel="icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560&family=Manrope:wght@400;600;700&family=Noto+Naskh+Arabic:wght@500;700&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560&family=Manrope:wght@400;700;800&family=Noto+Naskh+Arabic:wght@500;700&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
-  <header class="nav">
-    <div class="wrap nav-in">
+  <header class="top">
+    <div class="wrap top-row">
       <a class="brand" href="#" data-go="home">
         <img src="assets/logo.png" alt="" />
         <span>Jobs Sphere<small data-i="tag">Free for seekers · KSA</small></span>
       </a>
-      <nav class="nav-links">
-        <a class="l" href="#" data-go="home" data-i="nav_home">Home</a>
-        <a class="l" href="#" data-go="jobs" data-i="nav_jobs">Jobs</a>
-        <a class="l" href="#" data-go="resume" data-i="nav_cv">CV builder</a>
-        <a class="l" href="#" data-go="guide" data-i="nav_guide">Labor guide</a>
-        <a class="l" href="#" data-go="employers" data-i="nav_emp">Employers</a>
-        <a class="l" href="#" data-go="care" data-i="nav_care">AI Care</a>
-        <a class="l" href="legal.html" data-i="nav_legal">Legal</a>
-      </nav>
-      <div class="controls">
-        <select id="lang">
-          <option value="en">English</option>
-          <option value="ur">اردو</option>
-          <option value="ar">العربية</option>
-        </select>
-      </div>
+      <select id="lang">
+        <option value="en">EN</option>
+        <option value="ur">اردو</option>
+        <option value="ar">عربي</option>
+      </select>
     </div>
   </header>
 
@@ -42,48 +31,51 @@
     <div class="backbar" id="backbar" hidden>
       <button type="button" class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
     </div>
+
     <section class="view on" id="home">
       <div class="hero">
-        <div>
-          <p class="kicker" data-i="kicker">Transparent matching</p>
-          <h1 data-i="h1">Jobs without the scam tax.</h1>
-          <p class="lede" data-i="lede">Jobs Sphere is an independent board for Saudi Arabia. Seekers search free. Employers pay a small fee after we review their company. We are not Qiwa, Absher or any ministry.</p>
-          <form class="search" id="homeSearch">
-            <input id="q" data-i-ph="ph_q" placeholder="Job title" />
-            <select id="city">
-              <option value="">All cities</option>
-              <option>Riyadh</option><option>Jeddah</option><option>Dammam</option>
-              <option>Makkah</option><option>Madinah</option><option>Abha</option>
-            </select>
-            <select id="visa">
-              <option value="">Visa / Iqama</option>
-              <option>Transfer</option><option>New visa</option><option>Saudi</option>
-            </select>
-            <button class="btn btn-g" type="submit" data-i="search">Search</button>
-          </form>
-          <div class="trust">
-            <span class="pill" data-i="t1">Seekers never pay us</span>
-            <span class="pill" data-i="t2">Sample cards are labelled</span>
-            <span class="pill" data-i="t3">Report WhatsApp visa sellers</span>
-          </div>
+        <p class="kicker" data-i="kicker">Transparent matching</p>
+        <h1 data-i="h1">Jobs without the scam tax.</h1>
+        <p class="lede" data-i="lede">Independent board for Saudi Arabia. Seekers search free. Employers pay after review. We are not Qiwa.</p>
+        <form class="search" id="homeSearch">
+          <input id="q" data-i-ph="ph_q" placeholder="Job title" />
+          <select id="city">
+            <option value="">All cities</option>
+            <option>Riyadh</option><option>Jeddah</option><option>Dammam</option>
+            <option>Makkah</option><option>Madinah</option><option>Abha</option>
+          </select>
+          <select id="visa">
+            <option value="">Visa / Iqama</option>
+            <option>Transfer</option><option>New visa</option><option>Saudi</option>
+          </select>
+          <button class="btn btn-g" type="submit" data-i="search">Search</button>
+        </form>
+        <div class="cats">
+          <button class="cat" data-cat="Driver"><b>🚗</b><span data-i="c1">Driver</span></button>
+          <button class="cat" data-cat="Warehouse"><b>📦</b><span data-i="c2">Store</span></button>
+          <button class="cat" data-cat="Restaurant"><b>🍽️</b><span data-i="c3">Food</span></button>
+          <button class="cat" data-cat="Sales"><b>🏷️</b><span data-i="c4">Sales</span></button>
+          <button class="cat" data-cat="technician"><b>🔧</b><span data-i="c5">Tech</span></button>
+          <button class="cat" data-cat="Housekeeping"><b>🏠</b><span data-i="c6">Home</span></button>
+          <button class="cat" data-cat="waiter"><b>👔</b><span data-i="c7">Service</span></button>
+          <button class="cat" data-go="jobs"><b>⋯</b><span data-i="c8">All</span></button>
         </div>
-        <img src="assets/hero-jobs.jpg" alt="Riyadh morning" />
       </div>
       <div class="section">
-        <h2 data-i="how_h">How trust works</h2>
-        <p class="sub" data-i="how_p">LinkedIn’s clarity, Indeed’s search, Gulf simplicity — plus a rule they skip: we do not live on seeker fees.</p>
+        <h2 data-i="how_h">Why trust this more than a bazaar</h2>
+        <p class="sub" data-i="how_p">Haraj sells things. We match work. Seekers never pay. SAMPLE cards are labelled. Contracts live on Qiwa.</p>
         <div class="grid">
-          <article class="card"><h3 data-i="h1t">1. Employer writes</h3><p data-i="h1p">Company name, CR number, city, role. No passport photos on this site.</p></article>
-          <article class="card"><h3 data-i="h2t">2. We review</h3><p data-i="h2p">The vacancy stays hidden until a human checks the company. Demo cards stay marked SAMPLE.</p></article>
-          <article class="card"><h3 data-i="h3t">3. Contract elsewhere</h3><p data-i="h3p">A real contract is signed on Qiwa. We only introduce. We cannot issue Iqama.</p></article>
+          <article class="card"><h3 data-i="h1t">1. Employer writes</h3><p data-i="h1p">Company, CR, city, role. No passport photos here.</p></article>
+          <article class="card"><h3 data-i="h2t">2. We review</h3><p data-i="h2p">Hidden until a human checks. Demo stays SAMPLE.</p></article>
+          <article class="card"><h3 data-i="h3t">3. Contract on Qiwa</h3><p data-i="h3p">We introduce. We cannot issue Iqama.</p></article>
         </div>
       </div>
     </section>
 
     <section class="view" id="jobs">
       <h2 data-i="jobs_h">Open board</h2>
-      <p class="sub" data-i="jobs_p">Gold SAMPLE badges are not real vacancies. They exist so you can try filters before the first verified employer is live.</p>
-      <div class="notice" data-i="jobs_n">Never pay a recruiter who found you “through Jobs Sphere” unless you confirmed the company CR yourself.</div>
+      <p class="sub" data-i="jobs_p">Gold SAMPLE is practice, not a real vacancy.</p>
+      <div class="notice" data-i="jobs_n">Never pay someone who found you “through Jobs Sphere” until you check the CR.</div>
       <div class="grid" id="jobList"></div>
     </section>
 
@@ -91,82 +83,72 @@
 
     <section class="view" id="resume">
       <h2 data-i="cv_h">Free CV in two minutes</h2>
-      <p class="sub" data-i="cv_p">We do not keep this file on a public board. Print or save as PDF from your browser. Write only the truth.</p>
-      <div class="row2">
-        <form class="card" id="cvForm">
-          <div class="field"><label data-i="cv_name">Full name</label><input name="name" required /></div>
-          <div class="row2">
-            <div class="field"><label data-i="cv_city">City</label><input name="city" /></div>
-            <div class="field"><label data-i="cv_visa">Visa / Iqama</label><input name="visa" placeholder="Transfer / Saudi / Visitor" /></div>
-          </div>
-          <div class="field"><label data-i="cv_role">Target job</label><input name="role" /></div>
-          <div class="field"><label data-i="cv_skills">Skills</label><input name="skills" /></div>
-          <div class="field"><label data-i="cv_exp">Experience (short)</label><textarea name="exp" rows="4"></textarea></div>
-          <button class="btn btn-g" type="submit" data-i="cv_go">Build CV</button>
-        </form>
-        <div class="cv" id="cvOut" data-i="cv_empty">Your CV will appear here.</div>
-      </div>
+      <p class="sub" data-i="cv_p">Print or save PDF. Write only the truth.</p>
+      <form class="card" id="cvForm">
+        <div class="field"><label data-i="cv_name">Full name</label><input name="name" required /></div>
+        <div class="row2">
+          <div class="field"><label data-i="cv_city">City</label><input name="city" /></div>
+          <div class="field"><label data-i="cv_visa">Visa / Iqama</label><input name="visa" /></div>
+        </div>
+        <div class="field"><label data-i="cv_role">Target job</label><input name="role" /></div>
+        <div class="field"><label data-i="cv_skills">Skills</label><input name="skills" /></div>
+        <div class="field"><label data-i="cv_exp">Experience</label><textarea name="exp" rows="4"></textarea></div>
+        <button class="btn btn-g" type="submit" data-i="cv_go">Build CV</button>
+      </form>
+      <div class="cv" id="cvOut" style="margin-top:10px" data-i="cv_empty">Your CV will appear here.</div>
     </section>
 
     <section class="view" id="guide">
-      <h2 data-i="g_h">Labor orientation — not legal advice</h2>
-      <p class="sub" data-i="g_p">Official sources: qiwa.sa · hrsd.gov.sa · absher.sa. Rules change. Your contract wins over this page.</p>
-      <div class="grid">
-        <article class="card"><h3>Qiwa</h3><p data-i="g1">Digital contracts and many transfers go through Qiwa (MHRSD). We are not Qiwa.</p></article>
-        <article class="card"><h3>Iqama</h3><p data-i="g2">A new employer usually starts a transfer on Qiwa. You confirm in official apps. Paper NOC is not the modern path.</p></article>
-        <article class="card"><h3>WPS</h3><p data-i="g3">Wages should appear on the Wage Protection System. Unpaid months can affect your rights — ask HRSD/Qiwa, not a broker.</p></article>
-      </div>
-      <div class="notice warn" data-i="g_w">If someone says “I will transfer you today for 2000 riyal on STC Pay”, that is a scam pattern. Do not pay.</div>
+      <h2 data-i="g_h">Labor notes — not legal advice</h2>
+      <p class="sub" data-i="g_p">Official: qiwa.sa · hrsd.gov.sa · absher.sa</p>
+      <article class="card"><h3>Qiwa</h3><p data-i="g1">Contracts and many transfers go through Qiwa. We are not Qiwa.</p></article>
+      <article class="card"><h3>Iqama</h3><p data-i="g2">New employer usually starts transfer on Qiwa.</p></article>
+      <article class="card"><h3>WPS</h3><p data-i="g3">Wages should show on WPS. Ask HRSD, not a broker.</p></article>
+      <div class="notice warn" data-i="g_w">“I will transfer you today for 2000 SAR on STC Pay” is a scam pattern.</div>
     </section>
 
     <section class="view" id="employers">
-      <h2 data-i="e_h">Employers — you fund the house, not the worker</h2>
-      <p class="sub" data-i="e_p">199 SAR per reviewed listing (launch price). Seekers stay free. Vacancy stays hidden until we check the CR. This is not a government licence to hire.</p>
+      <h2 data-i="e_h">Post a job — you pay, not the worker</h2>
+      <p class="sub" data-i="e_p">199 SAR after review. Hidden until CR check.</p>
       <form class="card" id="empForm">
-        <div class="row2">
-          <div class="field"><label>Company</label><input name="company" required /></div>
-          <div class="field"><label>CR number</label><input name="cr" required /></div>
-        </div>
+        <div class="field"><label>Company</label><input name="company" required /></div>
+        <div class="field"><label>CR number</label><input name="cr" required /></div>
         <div class="row2">
           <div class="field"><label>City</label><input name="city" required /></div>
           <div class="field"><label>Email</label><input name="email" type="email" required /></div>
         </div>
-        <div class="row2">
-          <div class="field"><label>Job title</label><input name="title" required /></div>
-          <div class="field"><label>Salary range</label><input name="salary" /></div>
-        </div>
-        <div class="field"><label>Visa</label><input name="visa" placeholder="Transfer / New / Saudi" /></div>
+        <div class="field"><label>Job title</label><input name="title" required /></div>
+        <div class="field"><label>Salary</label><input name="salary" /></div>
+        <div class="field"><label>Visa</label><input name="visa" /></div>
         <div class="field"><label>Description</label><textarea name="description" rows="4"></textarea></div>
-        <p class="notice" data-i="e_n">Do not upload Iqama or passport images here. We will ask only for what the law allows, later, through a safer channel.</p>
+        <p class="notice" data-i="e_n">Do not upload Iqama or passport images here.</p>
         <button class="btn btn-g" type="submit" data-i="e_go">Submit for review</button>
         <p class="meta" id="empMsg"></p>
       </form>
     </section>
 
     <section class="view" id="care">
+      <button type="button" class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
       <h2>Sphere AI Care</h2>
-      <p class="sub" data-i="care_p">Urdu, Arabic, English. Scam check, CV tips, Qiwa orientation. Not a lawyer. Not the Ministry.</p>
+      <p class="sub" data-i="care_p">Job, CV, scam, Qiwa. Not a lawyer. Not the Ministry.</p>
       <div class="card chatbox">
         <div class="msgs" id="msgs"></div>
         <form class="chat-f" id="careForm">
           <input id="careIn" data-i-ph="care_ph" placeholder="Ask…" />
-          <button class="btn btn-g" type="submit">→</button>
+          <button class="btn btn-g" type="submit" style="width:auto">→</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      Jobs Sphere · Founder Ajlal Khan · Independent ·
-      <a href="legal.html">Legal</a> ·
-      Official: <a href="https://www.qiwa.sa" target="_blank" rel="noopener">Qiwa</a>
-    </div>
-  </footer>
+  <nav class="tabbar">
+    <button type="button" data-go="home"><b>⌂</b><span data-i="tab1">Home</span></button>
+    <button type="button" data-go="jobs"><b>☰</b><span data-i="tab2">Jobs</span></button>
+    <button type="button" data-go="employers"><b>+</b><span data-i="tab3">Post</span></button>
+    <button type="button" data-go="care"><b>◎</b><span data-i="tab4">AI</span></button>
+    <button type="button" data-go="resume"><b>▤</b><span data-i="tab5">CV</span></button>
+  </nav>
 
-  <div class="dock">
-    <button type="button" data-go="care" aria-label="AI Care"><img src="assets/agent.png" alt="" /></button>
-  </div>
-  <script src="app.js"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
