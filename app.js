@@ -137,45 +137,62 @@ const CARE = {
   },
 };
 
-function localCare(text, lang) {
-  const t = (text || "").toLowerCase().trim();
+function replyFor(intent, lang) {
+  const L = lang === "ur" || lang === "ar" ? lang : "en";
+  if (intent === "scam") return CARE.scam[L];
+  if (intent === "qiwa") return CARE.qiwa[L];
+  if (intent === "iqama") return CARE.iqama[L];
+  if (intent === "resume") return CARE.resume[L];
+  if (intent === "pay") return CARE.pay[L];
   const pack = {
     en: {
-      hi: "Salaam. I am Ajlal AI Care. I can help with: finding sample jobs, a free CV, scam signs, and basic Qiwa/Iqama notes. I am not the government. What do you need?",
-      job: "To look for work: tap Jobs (or Search on the home page). Cards marked SAMPLE are practice only — not real vacancies. Real jobs appear after we review a company. We never charge job seekers.",
-      apply: "Open a job card and tap Apply (free). Enter your name and WhatsApp. SAMPLE jobs are not real, so nobody will call you for those. Never pay to be selected.",
-      more: "Try asking: “need a job”, “make a CV”, “is this a scam?”, “how does Qiwa work?”, or “iqama transfer”.",
+      hi: "Salaam. I am Ajlal AI Care. Ask about a job, a CV, scams, Qiwa or Iqama. I am not the government.",
+      job: "Tap Search or Jobs. SAMPLE cards are practice, not real vacancies. We never charge job seekers.",
+      apply: "Open a job, tap Apply (free), write name and WhatsApp. Do not pay anyone to be selected.",
+      ask: "Yes. Write one clear line: I need a job in Riyadh. Or: How do I make a CV?",
+      site: "This website is real and free for seekers. It is independent, not Qiwa. SAMPLE jobs are labelled. Never send passport photos or money to a stranger on WhatsApp.",
     },
     ur: {
-      hi: "السلام علیکم۔ میں Ajlal AI Care ہوں۔ مدد: نوکری تلاش، مفت سی وی، اسکیم کی پہچان، قوی/اقامہ کی بنیادی بات۔ میں حکومت نہیں۔ کیا چاہیے؟",
-      job: "نوکری کے لیے اوپر Jobs دباؤ یا ہوم پر تلاش۔ SAMPLE والی کارڈز مشق ہیں، اصلی نوکری نہیں۔ اصلی تب آئے گی جب کمپنی کا جائزہ ہو۔ ہم سیکر سے پیسے نہیں لیتے۔",
-      apply: "جاب کارڈ کھولو، Apply (مفت) دباؤ، نام اور واٹس ایپ لکھو۔ SAMPLE پر کوئی کال نہیں آئے گی۔ سلیکشن کے پیسے مت دو۔",
-      ask: "ہاں، پوچھو۔ ایک چھوٹی بات لکھو، جیسے: ریاض میں نوکری چاہیے۔ یا: سی وی کیسے بنے؟ یا: یہ اسکیم تو نہیں؟",
-      more: "لکھ سکتے ہو: نوکری چاہیے، سی وی، یہ اسکیم تو نہیں، قوی کیا ہے، اقامہ ٹرانسفر۔",
+      hi: "السلام علیکم۔ میں Ajlal AI Care ہوں۔ نوکری، سی وی، اسکیم، قوی یا اقامہ پوچھو۔ میں حکومت نہیں۔",
+      job: "تلاش یا Jobs دباؤ۔ SAMPLE مشق ہے، اصلی نوکری نہیں۔ ہم سیکر سے پیسے نہیں لیتے۔",
+      apply: "جاب کھولو، Apply (مفت)، نام اور واٹس ایپ۔ سلیکشن کے پیسے مت دو۔",
+      ask: "ہاں۔ سیدھی بات لکھو: ریاض میں نوکری چاہیے۔ یا: سی وی کیسے بنے؟",
+      site: "یہ سائٹ اصلی ہے، جاب سیکر کے لیے مفت۔ ہم قوی نہیں۔ SAMPLE لکھا ہوتا ہے۔ اجنبی کو پاسپورٹ یا پیسے واٹس ایپ پر نہ بھیجو۔",
     },
     ar: {
-      hi: "السلام عليكم. أنا Ajlal AI Care. أساعد في البحث عن عمل، سيرة مجانية، كشف النصب، وأساسيات قوى/الإقامة. لست الحكومة. ماذا تحتاج؟",
-      job: "للعمل: اضغط Jobs أو ابحث في الصفحة الأولى. بطاقات SAMPLE للتدريب وليست وظائف حقيقية. الوظائف الحقيقية بعد مراجعة الشركة. لا نأخذ رسوماً من الباحث.",
-      apply: "افتح البطاقة واضغط قدّم مجاناً. اكتب اسمك وواتساب. عيّنات SAMPLE لن يتصل بها أحد. لا تدفع مقابل القبول.",
-      more: "جرب: أريد وظيفة، سيرة، هل هذا نصب، ما هي قوى، نقل إقامة.",
+      hi: "السلام عليكم. أنا Ajlal AI Care. اسأل عن وظيفة أو سيرة أو نصب أو قوى. لست الحكومة.",
+      job: "اضغط بحث أو Jobs. SAMPLE للتدريب لا وظيفة حقيقية. لا نأخذ من الباحث.",
+      apply: "افتح الوظيفة وقدّم مجاناً. لا تدفع مقابل القبول.",
+      ask: "نعم. اكتب: أريد عملاً في الرياض. أو: كيف أعمل سيرة؟",
+      site: "الموقع حقيقي ومجاني للباحث. لسنا قوى. لا ترسل جوازك أو مالاً لغريب على واتساب.",
     },
-  }[lang] || {};
-
-  if (/scam|fake|fraud|cheat|پیسہ|نصب|احتيال|whatsapp|واتس|broker|dalal/.test(t)) return CARE.scam[lang];
-  if (/qiwa|قوی|قوى|absher|ابشر/.test(t)) return CARE.qiwa[lang];
-  if (/iqama|اقامہ|إقامة|transfer|نقل|كفالة|kafala/.test(t)) return CARE.iqama[lang];
-  if (/cv|resume|سيرة|سی وی|cv بنا/.test(t)) return CARE.resume[lang];
-  if (/fee|price|pay|paid|فیس|رسوم|پیسے/.test(t) && !/job|نوکری|عمل/.test(t)) return CARE.pay[lang];
-  if (/apply|درخواست|قدّم|قدم/.test(t)) return pack.apply;
-  if (/question|ask|سوال|سؤال|پوچھ/.test(t)) return pack.ask;
-  if (/thank|شکریہ|شكرا|merci/.test(t)) return lang === "ur" ? "خوش رہو۔ اور پوچھنا ہو تو لکھو۔" : lang === "ar" ? "عفواً. اسأل إن احتجت." : "You are welcome. Ask again if you need.";
-  if (/who are you|تم کون|من أنت|what is this/.test(t)) return pack.hi;
-  if (/job|work|vacanc|hiring|نوکری|ملازمت|وظيفة|عمل|need job|job chahi|naukri/.test(t)) return pack.job;
-  if (/^(hi|hey|hello|yo|salam|salaam|assalam|السلام|سلام|مرحبا|اهلا|هلا)\b/.test(t) || t.length < 4) return pack.hi;
-  return (pack.hi || "") + "\n\n" + (pack.more || "");
+  };
+  return (pack[L] && pack[L][intent]) || pack[L].hi;
 }
 
-const state = { lang: localStorage.getItem("asj_lang") || "ur", greeted: false };
+function localCare(text, lang) {
+  const t = (text || "").toLowerCase().trim();
+  if (/urdu|اردو|urdu mai|اردو میں|batao|batawo|bata do/.test(t)) {
+    state.lang = "ur";
+    localStorage.setItem("asj_lang", "ur");
+    if ($("#lang")) $("#lang").value = "ur";
+    apply();
+    return replyFor(state.lastIntent || "hi", "ur");
+  }
+  let intent = "ask";
+  if (/scam|fake|fraud|real website|نصب|احتيال|whatsapp|واتس|broker/.test(t)) intent = /website|site|سائٹ/.test(t) ? "site" : "scam";
+  else if (/this site|ye site|website|سائٹ/.test(t)) intent = "site";
+  else if (/qiwa|قوی|قوى|absher|ابشر/.test(t)) intent = "qiwa";
+  else if (/iqama|اقامہ|إقامة|transfer|نقل|kafala/.test(t)) intent = "iqama";
+  else if (/cv|resume|سيرة|سی وی/.test(t)) intent = "resume";
+  else if (/job|work|نوکری|وظيفة|naukri|chahiye|چاہیے/.test(t)) intent = "job";
+  else if (/apply|درخواست/.test(t)) intent = "apply";
+  else if (/^(hi|hey|hello|salam|سلام|مرحبا)/.test(t) || t.length < 5) intent = "hi";
+  state.lastIntent = intent;
+  return replyFor(intent, lang);
+}
+
+const state = { lang: localStorage.getItem("asj_lang") || "ur", greeted: false, lastIntent: "hi" };
 const $ = (s, r = document) => r.querySelector(s);
 
 function apply() {
