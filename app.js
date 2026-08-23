@@ -30,7 +30,7 @@ const I = {
     e_go: "Submit for review",
     care_p: "Scam check, CV tips, Qiwa orientation. Not a lawyer. Not the Ministry.",
     care_ph: "Ask in any language…",
-    hi: "Salaam — Ajlal AI Care. Ask about scams, CV, Qiwa or Iqama basics. I am not the government.",
+    hi: "Salaam — Sphere AI Care. Ask about scams, CV, Qiwa or Iqama basics. I am not the government.",
   },
   ur: {
     tag: "جاب سیکر مفت · سعودی عرب",
