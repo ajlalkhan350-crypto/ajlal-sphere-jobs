@@ -138,14 +138,37 @@ const CARE = {
 };
 
 function localCare(text, lang) {
-  const t = (text || "").toLowerCase();
-  if (/scam|fake|fraud|پیسہ|نصب|احتيال|whatsapp|واتس/.test(t)) return CARE.scam[lang];
+  const t = (text || "").toLowerCase().trim();
+  const pack = {
+    en: {
+      hi: "Salaam. I am Ajlal AI Care. I can help with: finding sample jobs, a free CV, scam signs, and basic Qiwa/Iqama notes. I am not the government. What do you need?",
+      job: "To look for work: tap Jobs (or Search on the home page). Cards marked SAMPLE are practice only — not real vacancies. Real jobs appear after we review a company. We never charge job seekers.",
+      apply: "Open a job card and tap Apply (free). Enter your name and WhatsApp. SAMPLE jobs are not real, so nobody will call you for those. Never pay to be selected.",
+      more: "Try asking: “need a job”, “make a CV”, “is this a scam?”, “how does Qiwa work?”, or “iqama transfer”.",
+    },
+    ur: {
+      hi: "السلام علیکم۔ میں Ajlal AI Care ہوں۔ مدد: نوکری تلاش، مفت سی وی، اسکیم کی پہچان، قوی/اقامہ کی بنیادی بات۔ میں حکومت نہیں۔ کیا چاہیے؟",
+      job: "نوکری کے لیے اوپر Jobs دباؤ یا ہوم پر تلاش۔ SAMPLE والی کارڈز مشق ہیں، اصلی نوکری نہیں۔ اصلی تب آئے گی جب کمپنی کا جائزہ ہو۔ ہم سیکر سے پیسے نہیں لیتے۔",
+      apply: "جاب کارڈ کھولو، Apply (مفت) دباؤ، نام اور واٹس ایپ لکھو۔ SAMPLE پر کوئی کال نہیں آئے گی۔ سلیکشن کے پیسے مت دو۔",
+      more: "لکھ سکتے ہو: نوکری چاہیے، سی وی، یہ اسکیم تو نہیں، قوی کیا ہے، اقامہ ٹرانسفر۔",
+    },
+    ar: {
+      hi: "السلام عليكم. أنا Ajlal AI Care. أساعد في البحث عن عمل، سيرة مجانية، كشف النصب، وأساسيات قوى/الإقامة. لست الحكومة. ماذا تحتاج؟",
+      job: "للعمل: اضغط Jobs أو ابحث في الصفحة الأولى. بطاقات SAMPLE للتدريب وليست وظائف حقيقية. الوظائف الحقيقية بعد مراجعة الشركة. لا نأخذ رسوماً من الباحث.",
+      apply: "افتح البطاقة واضغط قدّم مجاناً. اكتب اسمك وواتساب. عيّنات SAMPLE لن يتصل بها أحد. لا تدفع مقابل القبول.",
+      more: "جرب: أريد وظيفة، سيرة، هل هذا نصب، ما هي قوى، نقل إقامة.",
+    },
+  }[lang] || {};
+
+  if (/scam|fake|fraud|cheat|پیسہ|نصب|احتيال|whatsapp|واتس|broker|dalal/.test(t)) return CARE.scam[lang];
   if (/qiwa|قوی|قوى|absher|ابشر/.test(t)) return CARE.qiwa[lang];
-  if (/iqama|اقامہ|إقامة|transfer|نقل|كفالة/.test(t)) return CARE.iqama[lang];
-  if (/cv|resume|سيرة|سی وی/.test(t)) return CARE.resume[lang];
-  if (/fee|price|pay|فیس|رسوم/.test(t)) return CARE.pay[lang];
-  if (/hi|hello|salam|سلام|مرحبا/.test(t)) return I[lang].hi;
-  return I[lang].care_p;
+  if (/iqama|اقامہ|إقامة|transfer|نقل|كفالة|kafala/.test(t)) return CARE.iqama[lang];
+  if (/cv|resume|سيرة|سی وی|cv بنا/.test(t)) return CARE.resume[lang];
+  if (/fee|price|pay|paid|فیس|رسوم|پیسے/.test(t) && !/job|نوکری|عمل/.test(t)) return CARE.pay[lang];
+  if (/apply|درخواست|قدّم|قدم/.test(t)) return pack.apply;
+  if (/job|work|vacanc|hiring|نوکری|ملازمت|وظيفة|عمل|need job|job chahi|naukri/.test(t)) return pack.job;
+  if (/^(hi|hey|hello|yo|salam|salaam|assalam|السلام|سلام|مرحبا|اهلا|هلا)\b/.test(t) || t.length < 4) return pack.hi;
+  return (pack.hi || "") + "\n\n" + (pack.more || "");
 }
 
 const state = { lang: localStorage.getItem("asj_lang") || "ur", greeted: false };
