@@ -150,6 +150,7 @@ function localCare(text, lang) {
       hi: "السلام علیکم۔ میں Ajlal AI Care ہوں۔ مدد: نوکری تلاش، مفت سی وی، اسکیم کی پہچان، قوی/اقامہ کی بنیادی بات۔ میں حکومت نہیں۔ کیا چاہیے؟",
       job: "نوکری کے لیے اوپر Jobs دباؤ یا ہوم پر تلاش۔ SAMPLE والی کارڈز مشق ہیں، اصلی نوکری نہیں۔ اصلی تب آئے گی جب کمپنی کا جائزہ ہو۔ ہم سیکر سے پیسے نہیں لیتے۔",
       apply: "جاب کارڈ کھولو، Apply (مفت) دباؤ، نام اور واٹس ایپ لکھو۔ SAMPLE پر کوئی کال نہیں آئے گی۔ سلیکشن کے پیسے مت دو۔",
+      ask: "ہاں، پوچھو۔ ایک چھوٹی بات لکھو، جیسے: ریاض میں نوکری چاہیے۔ یا: سی وی کیسے بنے؟ یا: یہ اسکیم تو نہیں؟",
       more: "لکھ سکتے ہو: نوکری چاہیے، سی وی، یہ اسکیم تو نہیں، قوی کیا ہے، اقامہ ٹرانسفر۔",
     },
     ar: {
@@ -166,6 +167,9 @@ function localCare(text, lang) {
   if (/cv|resume|سيرة|سی وی|cv بنا/.test(t)) return CARE.resume[lang];
   if (/fee|price|pay|paid|فیس|رسوم|پیسے/.test(t) && !/job|نوکری|عمل/.test(t)) return CARE.pay[lang];
   if (/apply|درخواست|قدّم|قدم/.test(t)) return pack.apply;
+  if (/question|ask|سوال|سؤال|پوچھ/.test(t)) return pack.ask;
+  if (/thank|شکریہ|شكرا|merci/.test(t)) return lang === "ur" ? "خوش رہو۔ اور پوچھنا ہو تو لکھو۔" : lang === "ar" ? "عفواً. اسأل إن احتجت." : "You are welcome. Ask again if you need.";
+  if (/who are you|تم کون|من أنت|what is this/.test(t)) return pack.hi;
   if (/job|work|vacanc|hiring|نوکری|ملازمت|وظيفة|عمل|need job|job chahi|naukri/.test(t)) return pack.job;
   if (/^(hi|hey|hello|yo|salam|salaam|assalam|السلام|سلام|مرحبا|اهلا|هلا)\b/.test(t) || t.length < 4) return pack.hi;
   return (pack.hi || "") + "\n\n" + (pack.more || "");
