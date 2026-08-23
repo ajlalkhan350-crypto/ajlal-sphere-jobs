@@ -31,7 +31,7 @@ button, input, select, textarea { font: inherit; }
 
 .cats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 12px 0; }
 .cat { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 4px; text-align: center; cursor: pointer; }
-.cat i { display: grid; place-items: center; width: 40px; height: 40px; margin: 0 auto 6px; border-radius: 10px; background: #e8f4f0; color: var(--green); font-style: normal; font-weight: 800; }
+.cat img, .cat svg, .cat .ico { width: 48px; height: 48px; margin: 0 auto 6px; border-radius: 12px; object-fit: cover; display: block; }
 .cat span { font-size: .72rem; font-weight: 700; }
 
 h1 { font-size: 1.25rem; margin: 4px 0 8px; }

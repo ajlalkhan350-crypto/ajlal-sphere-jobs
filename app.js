@@ -42,9 +42,21 @@ function saveCart(c) { localStorage.setItem("sp_cart", JSON.stringify(c)); }
 
 function stars(n) { return "★".repeat(n || 0) + "☆".repeat(5 - (n || 0)); }
 
+const ICO = {
+  buy: '<svg viewBox="0 0 64 64" fill="none"><path d="M18 24h28l-2 26H20L18 24z" stroke="#d4af37" stroke-width="2.4" stroke-linejoin="round"/><path d="M26 24v-4a6 6 0 0 1 12 0v4" stroke="#d4af37" stroke-width="2.4"/></svg>',
+  grocery: '<svg viewBox="0 0 64 64" fill="none"><path d="M16 34h32v12a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4V34z" stroke="#d4af37" stroke-width="2.4"/><path d="M20 34l2-14h20l2 14" stroke="#d4af37" stroke-width="2.4"/><path d="M32 16c2-4 8-2 8 2" stroke="#d4af37" stroke-width="2"/></svg>',
+  car: '<svg viewBox="0 0 64 64" fill="none"><path d="M10 36l5-9c1-2 4-4 7-4h16c4 0 7 2 9 5l7 8" stroke="#d4af37" stroke-width="2.4" stroke-linejoin="round"/><path d="M8 36h48v4a3 3 0 0 1-3 3h-3" stroke="#d4af37" stroke-width="2.4"/><circle cx="20" cy="44" r="4" stroke="#d4af37" stroke-width="2.2"/><circle cx="44" cy="44" r="4" stroke="#d4af37" stroke-width="2.2"/></svg>',
+  property: '<svg viewBox="0 0 64 64" fill="none"><path d="M10 32L32 12l22 20" stroke="#d4af37" stroke-width="2.4" stroke-linejoin="round"/><path d="M18 30v22h28V30" stroke="#d4af37" stroke-width="2.4"/><rect x="28" y="38" width="8" height="14" stroke="#d4af37" stroke-width="2"/></svg>',
+};
+
+function thumb(sec) {
+  const k = ICO[sec] ? sec : "buy";
+  return `<div class="thumb t-${k}" aria-hidden="true">${ICO[k]}</div>`;
+}
+
 function adCard(a) {
   return `<button class="item" data-open="${a.id}" data-kind="ad">
-    <img src="${a.img || "assets/logo.png"}" alt="" />
+    ${thumb(a.sec)}
     <div class="pad"><span class="badge">SAMPLE</span>
     <strong>${a.title}</strong>
     <div class="price">${a.price || ""}</div>
@@ -82,7 +94,7 @@ function renderMarket() {
 }
 function renderGrocery() {
   $("#grocList").innerHTML = allAds().filter((a) => a.sec === "grocery").map((a) =>
-    `<div class="item"><img src="${a.img}" alt="" /><div class="pad"><span class="badge">SAMPLE</span>
+    `<div class="item">${thumb("grocery")}<div class="pad"><span class="badge">SAMPLE</span>
     <strong>${a.title}</strong><div class="price">${a.price}</div>
     <button class="btn btn-g" data-cart="${a.id}">Add</button></div></div>`
   ).join("");
@@ -147,7 +159,7 @@ function openDetail(id, kind) {
   if (!x) return;
   $("#detail").innerHTML = `
     <button class="btn btn-line" data-go="home">← Home</button>
-    ${x.img ? `<img src="${x.img}" alt="" style="width:100%;max-height:240px;object-fit:cover;border-radius:12px;margin:8px 0" />` : ""}
+    ${thumb(x.sec || (kind === "job" ? "buy" : "buy"))}
     <span class="badge">SAMPLE</span>
     <h2>${x.title}</h2>
     <div class="price">${x.price || ""}</div>

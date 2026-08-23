@@ -7,7 +7,20 @@
   <meta name="description" content="Sphere: independent all-in-one board for Saudi Arabia. Jobs, buy & sell, grocery, cars, property, home services. Not Amazon, Noon, Daraz or OLX." />
   <link rel="icon" href="assets/logo.png" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Noto+Naskh+Arabic:wght@600&family=Noto+Nastaliq+Urdu:wght@600&display=swap" />
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=12" />
+  <style>
+    /* Icons live in this file so github.io does not need extra PNGs */
+    .cat .ico, .cat svg { width: 48px; height: 48px; margin: 0 auto 6px; display: block; }
+    .cat svg { border-radius: 12px; }
+    .thumb { width: 100%; height: 118px; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg,#0f3d2e,#163528); }
+    .thumb svg { width: 56px; height: 56px; }
+    .t-buy { background: linear-gradient(160deg,#1a2744,#232f3e); }
+    .t-grocery { background: linear-gradient(160deg,#0f3d2e,#1a5a3a); }
+    .t-car { background: linear-gradient(160deg,#1b2838,#2c3e50); }
+    .t-property { background: linear-gradient(160deg,#2a2418,#3d3420); }
+    #detail .thumb { height: 180px; border-radius: 12px; margin: 8px 0; }
+    @media (min-width: 800px) { .thumb { height: 150px; } .thumb svg { width: 72px; height: 72px; } }
+  </style>
 </head>
 <body>
   <header class="hdr">
@@ -28,14 +41,38 @@
   <main class="wrap">
     <section class="view on" id="home">
       <div class="cats">
-        <button class="cat" data-go="market" data-kind="buy"><img src="assets/icon-buy.png" alt="" /><span>Buy & Sell</span></button>
-        <button class="cat" data-go="grocery"><img src="assets/icon-grocery.png" alt="" /><span>Grocery</span></button>
-        <button class="cat" data-go="jobs"><img src="assets/icon-jobs.png" alt="" /><span>Jobs</span></button>
-        <button class="cat" data-go="cars"><img src="assets/icon-cars.png" alt="" /><span>Cars</span></button>
-        <button class="cat" data-go="property"><img src="assets/icon-property.png" alt="" /><span>Property</span></button>
-        <button class="cat" data-go="services"><img src="assets/icon-home.png" alt="" /><span>Home</span></button>
-        <button class="cat" data-go="post"><img src="assets/icon-post.png" alt="" /><span>Post ad</span></button>
-        <button class="cat" data-go="care"><img src="assets/icon-ai.png" alt="" /><span>AI Care</span></button>
+        <button class="cat" data-go="market" data-kind="buy">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0f3d2e"/><path d="M21 27h22l-1.6 20.2a2 2 0 0 1-2 1.8H24.6a2 2 0 0 1-2-1.8L21 27z" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/><path d="M26.5 27v-3.2a5.5 5.5 0 0 1 11 0V27" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/><path d="M32 34.2a5.2 5.2 0 1 1-3.6 1.5" stroke="#d4af37" stroke-width="1.8" stroke-linecap="round"/><path d="M27.2 34.6l1.2 2.4 2.5-.9" stroke="#d4af37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Buy & Sell</span>
+        </button>
+        <button class="cat" data-go="grocery">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0f3d2e"/><path d="M18 36c0-1.2.8-2.2 2-2.5L22 22h20l2 11.5c1.2.3 2 1.3 2 2.5v8a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4v-8z" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/><path d="M22 22c0-6 5-10 10-6" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/><circle cx="28" cy="33" r="2.2" stroke="#d4af37" stroke-width="1.6"/><circle cx="34.5" cy="31.5" r="2" stroke="#d4af37" stroke-width="1.6"/><path d="M38 28c2 2 3 5 2 8" stroke="#d4af37" stroke-width="1.6" stroke-linecap="round"/><path d="M31 18c2-3 6-2 6 1" stroke="#d4af37" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          <span>Grocery</span>
+        </button>
+        <button class="cat" data-go="jobs">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0f3d2e"/><rect x="14" y="26" width="36" height="24" rx="3" stroke="#d4af37" stroke-width="2"/><path d="M24 26v-3a6 6 0 0 1 16 0v3" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/><path d="M14 34h36" stroke="#d4af37" stroke-width="2"/><rect x="28" y="32" width="8" height="6" rx="1.5" stroke="#d4af37" stroke-width="1.8"/></svg></span>
+          <span>Jobs</span>
+        </button>
+        <button class="cat" data-go="cars">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0f3d2e"/><path d="M12 38l4-8c1-2 3-4 6-4h16c4 0 7 2 9 5l5 7" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/><path d="M10 38h44v4a3 3 0 0 1-3 3h-2" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="45" r="4" stroke="#d4af37" stroke-width="2"/><circle cx="44" cy="45" r="4" stroke="#d4af37" stroke-width="2"/><path d="M24 26l2 8h16l-3-8" stroke="#d4af37" stroke-width="1.8" stroke-linejoin="round"/><path d="M32 26v8" stroke="#d4af37" stroke-width="1.6"/></svg></span>
+          <span>Cars</span>
+        </button>
+        <button class="cat" data-go="property">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0f3d2e"/><path d="M12 32L32 14l20 18" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/><path d="M18 30v20h28V30" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/><rect x="28" y="38" width="8" height="12" rx="1" stroke="#d4af37" stroke-width="1.8"/><rect x="22" y="34" width="6" height="6" rx="1" stroke="#d4af37" stroke-width="1.6"/><rect x="36" y="34" width="6" height="6" rx="1" stroke="#d4af37" stroke-width="1.6"/><path d="M42 18v8" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <span>Property</span>
+        </button>
+        <button class="cat" data-go="services">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0f3d2e"/><path d="M16 30L32 16l16 14" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/><path d="M21 28v12h22V28" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/><rect x="29" y="32" width="6" height="8" rx="1" stroke="#d4af37" stroke-width="1.6"/><path d="M18 50h10l3-3 4 6 4-8 3 5h7" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Home</span>
+        </button>
+        <button class="cat" data-go="post">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0f3d2e"/><rect x="16" y="16" width="32" height="32" rx="8" stroke="#d4af37" stroke-width="2.2"/><path d="M32 24v16M24 32h16" stroke="#d4af37" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <span>Post ad</span>
+        </button>
+        <button class="cat" data-go="care">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0f3d2e"/><circle cx="32" cy="32" r="14" stroke="#d4af37" stroke-width="1.8"/><ellipse cx="32" cy="32" rx="14" ry="6" stroke="#d4af37" stroke-width="1.5"/><ellipse cx="32" cy="32" rx="6" ry="14" stroke="#d4af37" stroke-width="1.5"/><ellipse cx="32" cy="32" rx="11" ry="14" stroke="#d4af37" stroke-width="1.2" transform="rotate(30 32 32)"/><ellipse cx="32" cy="32" rx="11" ry="14" stroke="#d4af37" stroke-width="1.2" transform="rotate(-30 32 32)"/></svg></span>
+          <span>AI Care</span>
+        </button>
       </div>
       <h1>One board. Work, wheels, home, daily needs.</h1>
       <p class="lede">Independent marketplace. Not Amazon, Daraz, Noon or OLX. People list their own ads. Job seekers never pay us. SAMPLE cards are practice.</p>
@@ -204,6 +241,6 @@
     <button type="button" data-go="post"><b>+</b>Post</button>
     <button type="button" data-go="care"><b>○</b>AI</button>
   </nav>
-  <script src="app.js?v=10"></script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2fd74bf7a79e229',t:'MTc4NzUyMzExNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script src="app.js?v=12"></script>
+</body>
 </html>
