@@ -31,7 +31,9 @@ button, input, select, textarea { font: inherit; }
 .brand img { width: 34px; height: 34px; border-radius: 8px; }
 .brand small { display: block; font-weight: 500; color: var(--mute); font-size: .72rem; }
 .nav a.l { text-decoration: none; color: var(--mute); font-size: .9rem; }
-.nav-links { display: flex; gap: 14px; margin-inline-start: auto; }
+.nav-links { display: flex; gap: 10px; margin-inline-start: auto; flex-wrap: wrap; }
+.backbar { padding: 10px 0 0; }
+.backbar[hidden] { display: none !important; }
 .controls { display: flex; gap: 6px; }
 .controls select {
   border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 10px;
@@ -119,6 +121,14 @@ footer { border-top: 1px solid var(--line); padding: 22px 0 40px; color: var(--m
 
 @media (max-width: 860px) {
   .hero, .grid, .search, .row2 { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
+  .nav-in { align-items: flex-start; }
+  .nav-links { width: 100%; margin: 4px 0 0; gap: 8px; }
+  .nav a.l {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: .8rem;
+  }
   .hero img { height: 200px; }
 }
