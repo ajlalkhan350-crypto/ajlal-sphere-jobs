@@ -3,152 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Jobs Sphere — Saudi jobs without the scam tax</title>
-  <meta name="description" content="Jobs Sphere: free for job seekers in Saudi Arabia. Verified employers. Sphere AI Care. Not Qiwa." />
-  <meta name="theme-color" content="#157a52" />
+  <title>Sphere — Jobs, market, cars & services in KSA</title>
+  <meta name="description" content="Sphere is an independent KSA board: jobs, used goods, cars and home services. Not Amazon. Not Haraj. Not Qiwa. Seekers browse free." />
+  <meta name="theme-color" content="#131921" />
   <link rel="icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560&family=Manrope:wght@400;700;800&family=Noto+Naskh+Arabic:wght@500;700&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Noto+Naskh+Arabic:wght@500;700&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
-  <header class="top">
-    <div class="wrap top-row">
-      <a class="brand" href="#" data-go="home">
-        <img src="assets/logo.png" alt="" />
-        <span>Jobs Sphere<small data-i="tag">Free for seekers · KSA</small></span>
-      </a>
-      <select id="lang">
-        <option value="en">EN</option>
-        <option value="ur">اردو</option>
-        <option value="ar">عربي</option>
-      </select>
+  <header class="hdr">
+    <div class="wrap">
+      <div class="hdr-in">
+        <a class="brand" href="#" data-go="home">
+          <img src="assets/logo.png" alt="" />
+          <span>Sphere<small>Jobs · Market · Cars · KSA</small></span>
+        </a>
+        <select id="lang">
+          <option value="en">EN</option>
+          <option value="ur">اردو</option>
+          <option value="ar">عربي</option>
+        </select>
+      </div>
+      <form class="searchbar" id="homeSearch">
+        <input id="q" data-i-ph="ph_q" placeholder="Search jobs, cars, phones…" />
+        <button type="submit" data-i="search">Search</button>
+      </form>
     </div>
   </header>
 
   <main class="wrap">
-    <div class="backbar" id="backbar" hidden>
-      <button type="button" class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
-    </div>
-
     <section class="view on" id="home">
-      <div class="hero">
-        <p class="kicker" data-i="kicker">Transparent matching</p>
-        <h1 data-i="h1">Jobs without the scam tax.</h1>
-        <p class="lede" data-i="lede">Independent board for Saudi Arabia. Seekers search free. Employers pay after review. We are not Qiwa.</p>
-        <form class="search" id="homeSearch">
-          <input id="q" data-i-ph="ph_q" placeholder="Job title" />
-          <select id="city">
-            <option value="">All cities</option>
-            <option>Riyadh</option><option>Jeddah</option><option>Dammam</option>
-            <option>Makkah</option><option>Madinah</option><option>Abha</option>
-          </select>
-          <select id="visa">
-            <option value="">Visa / Iqama</option>
-            <option>Transfer</option><option>New visa</option><option>Saudi</option>
-          </select>
-          <button class="btn btn-g" type="submit" data-i="search">Search</button>
-        </form>
-        <div class="cats">
-          <button class="cat" data-cat="Driver"><b>🚗</b><span data-i="c1">Driver</span></button>
-          <button class="cat" data-cat="Warehouse"><b>📦</b><span data-i="c2">Store</span></button>
-          <button class="cat" data-cat="Restaurant"><b>🍽️</b><span data-i="c3">Food</span></button>
-          <button class="cat" data-cat="Sales"><b>🏷️</b><span data-i="c4">Sales</span></button>
-          <button class="cat" data-cat="technician"><b>🔧</b><span data-i="c5">Tech</span></button>
-          <button class="cat" data-cat="Housekeeping"><b>🏠</b><span data-i="c6">Home</span></button>
-          <button class="cat" data-cat="waiter"><b>👔</b><span data-i="c7">Service</span></button>
-          <button class="cat" data-go="jobs"><b>⋯</b><span data-i="c8">All</span></button>
-        </div>
+      <div class="cats">
+        <button class="cat" data-go="jobs"><i>J</i><span data-i="c_jobs">Jobs</span></button>
+        <button class="cat" data-go="market" data-kind="tech"><i>T</i><span data-i="c_tech">Tech</span></button>
+        <button class="cat" data-go="market" data-kind="grocery"><i>G</i><span data-i="c_groc">Grocery</span></button>
+        <button class="cat" data-go="cars"><i>C</i><span data-i="c_cars">Cars</span></button>
+        <button class="cat" data-go="services"><i>H</i><span data-i="c_home">Home</span></button>
+        <button class="cat" data-go="market" data-kind="sales"><i>S</i><span data-i="c_sale">Sales</span></button>
+        <button class="cat" data-go="sell"><i>+</i><span data-i="c_sell">Sell</span></button>
+        <button class="cat" data-go="care"><i>AI</i><span>AI</span></button>
       </div>
-      <div class="section">
-        <h2 data-i="how_h">Why trust this more than a bazaar</h2>
-        <p class="sub" data-i="how_p">Haraj sells things. We match work. Seekers never pay. SAMPLE cards are labelled. Contracts live on Qiwa.</p>
-        <div class="grid">
-          <article class="card"><h3 data-i="h1t">1. Employer writes</h3><p data-i="h1p">Company, CR, city, role. No passport photos here.</p></article>
-          <article class="card"><h3 data-i="h2t">2. We review</h3><p data-i="h2p">Hidden until a human checks. Demo stays SAMPLE.</p></article>
-          <article class="card"><h3 data-i="h3t">3. Contract on Qiwa</h3><p data-i="h3p">We introduce. We cannot issue Iqama.</p></article>
-        </div>
-      </div>
+      <h1 data-i="h1">Work and everyday needs — one honest board.</h1>
+      <p class="lede" data-i="lede">Independent. Not Amazon, not Haraj, not Qiwa. People list their own goods. Job seekers never pay us. SAMPLE cards are practice only.</p>
+
+      <h2 data-i="feat">Today on Sphere</h2>
+      <div class="cards" id="homeFeed"></div>
+      <div class="notice" data-i="note">Listings below are SAMPLE. Real posts appear after review. Brand names belong to their owners.</div>
     </section>
 
     <section class="view" id="jobs">
-      <h2 data-i="jobs_h">Open board</h2>
-      <p class="sub" data-i="jobs_p">Gold SAMPLE is practice, not a real vacancy.</p>
-      <div class="notice" data-i="jobs_n">Never pay someone who found you “through Jobs Sphere” until you check the CR.</div>
-      <div class="grid" id="jobList"></div>
+      <button class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
+      <h2 data-i="jobs_h">Jobs</h2>
+      <p class="sub" data-i="jobs_p">Free to browse and apply. SAMPLE is not a real vacancy.</p>
+      <div class="cards" id="jobList" style="grid-template-columns:1fr"></div>
     </section>
 
-    <section class="view" id="detail"></section>
-
-    <section class="view" id="resume">
-      <h2 data-i="cv_h">Free CV in two minutes</h2>
-      <p class="sub" data-i="cv_p">Print or save PDF. Write only the truth.</p>
-      <form class="card" id="cvForm">
-        <div class="field"><label data-i="cv_name">Full name</label><input name="name" required /></div>
-        <div class="row2">
-          <div class="field"><label data-i="cv_city">City</label><input name="city" /></div>
-          <div class="field"><label data-i="cv_visa">Visa / Iqama</label><input name="visa" /></div>
-        </div>
-        <div class="field"><label data-i="cv_role">Target job</label><input name="role" /></div>
-        <div class="field"><label data-i="cv_skills">Skills</label><input name="skills" /></div>
-        <div class="field"><label data-i="cv_exp">Experience</label><textarea name="exp" rows="4"></textarea></div>
-        <button class="btn btn-g" type="submit" data-i="cv_go">Build CV</button>
-      </form>
-      <div class="cv" id="cvOut" style="margin-top:10px" data-i="cv_empty">Your CV will appear here.</div>
+    <section class="view" id="market">
+      <button class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
+      <h2 data-i="m_h">Market</h2>
+      <p class="sub" data-i="m_p">People list their own items. We do not copy Amazon’s catalogue.</p>
+      <div class="cards" id="marketList"></div>
     </section>
 
-    <section class="view" id="guide">
-      <h2 data-i="g_h">Labor notes — not legal advice</h2>
-      <p class="sub" data-i="g_p">Official: qiwa.sa · hrsd.gov.sa · absher.sa</p>
-      <article class="card"><h3>Qiwa</h3><p data-i="g1">Contracts and many transfers go through Qiwa. We are not Qiwa.</p></article>
-      <article class="card"><h3>Iqama</h3><p data-i="g2">New employer usually starts transfer on Qiwa.</p></article>
-      <article class="card"><h3>WPS</h3><p data-i="g3">Wages should show on WPS. Ask HRSD, not a broker.</p></article>
-      <div class="notice warn" data-i="g_w">“I will transfer you today for 2000 SAR on STC Pay” is a scam pattern.</div>
+    <section class="view" id="cars">
+      <button class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
+      <h2 data-i="car_h">Cars</h2>
+      <p class="sub" data-i="car_p">Buy and sell between people. Check papers yourself. SAMPLE only for now.</p>
+      <div class="cards" id="carList"></div>
     </section>
 
-    <section class="view" id="employers">
-      <h2 data-i="e_h">Post a job — you pay, not the worker</h2>
-      <p class="sub" data-i="e_p">199 SAR after review. Hidden until CR check.</p>
+    <section class="view" id="services">
+      <button class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
+      <h2 data-i="sv_h">Home services</h2>
+      <p class="sub" data-i="sv_p">AC, cleaning, small repairs — after the provider is reviewed.</p>
+      <div class="cards" id="svcList" style="grid-template-columns:1fr"></div>
+    </section>
+
+    <section class="view" id="sell">
+      <button class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
+      <h2 data-i="sell_h">List something</h2>
+      <p class="sub" data-i="sell_p">Job, car, grocery, phone or service. Hidden until review. No fake brands.</p>
       <form class="card" id="empForm">
-        <div class="field"><label>Company</label><input name="company" required /></div>
-        <div class="field"><label>CR number</label><input name="cr" required /></div>
+        <div class="field"><label data-i="sell_type">Type</label>
+          <select name="kind"><option>Job</option><option>Car</option><option>Tech</option><option>Grocery</option><option>Home service</option><option>Other</option></select>
+        </div>
+        <div class="field"><label>Title</label><input name="title" required /></div>
         <div class="row2">
           <div class="field"><label>City</label><input name="city" required /></div>
-          <div class="field"><label>Email</label><input name="email" type="email" required /></div>
+          <div class="field"><label>Price / salary</label><input name="salary" /></div>
         </div>
-        <div class="field"><label>Job title</label><input name="title" required /></div>
-        <div class="field"><label>Salary</label><input name="salary" /></div>
-        <div class="field"><label>Visa</label><input name="visa" /></div>
-        <div class="field"><label>Description</label><textarea name="description" rows="4"></textarea></div>
-        <p class="notice" data-i="e_n">Do not upload Iqama or passport images here.</p>
+        <div class="field"><label>Your name / company</label><input name="company" required /></div>
+        <div class="field"><label>WhatsApp or email</label><input name="email" required /></div>
+        <div class="field"><label>CR (if company)</label><input name="cr" /></div>
+        <div class="field"><label>Details</label><textarea name="description" rows="4"></textarea></div>
+        <p class="notice" data-i="e_n">Do not upload Iqama or passport photos. Only list items you have the right to sell.</p>
         <button class="btn btn-g" type="submit" data-i="e_go">Submit for review</button>
         <p class="meta" id="empMsg"></p>
       </form>
     </section>
 
+    <section class="view" id="detail"></section>
+
+    <section class="view" id="resume">
+      <button class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
+      <h2 data-i="cv_h">Free CV</h2>
+      <form class="card" id="cvForm">
+        <div class="field"><label data-i="cv_name">Name</label><input name="name" required /></div>
+        <div class="row2">
+          <div class="field"><label data-i="cv_city">City</label><input name="city" /></div>
+          <div class="field"><label data-i="cv_visa">Visa</label><input name="visa" /></div>
+        </div>
+        <div class="field"><label data-i="cv_role">Job</label><input name="role" /></div>
+        <div class="field"><label data-i="cv_skills">Skills</label><input name="skills" /></div>
+        <div class="field"><label data-i="cv_exp">Experience</label><textarea name="exp" rows="3"></textarea></div>
+        <button class="btn btn-g" type="submit" data-i="cv_go">Build</button>
+      </form>
+      <div class="cv" id="cvOut" data-i="cv_empty"></div>
+    </section>
+
+    <section class="view" id="guide">
+      <button class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
+      <h2 data-i="g_h">Notes — not legal advice</h2>
+      <div class="card"><p data-i="g1">Jobs contracts: Qiwa (qiwa.sa). We are not Qiwa.</p></div>
+      <div class="card"><p data-i="g2">Cars: check Istimara and inspection yourself.</p></div>
+      <div class="notice warn" data-i="g_w">Anyone who asks you to pay to “get selected” or transfer Iqama on STC Pay is a scam pattern.</div>
+    </section>
+
     <section class="view" id="care">
-      <button type="button" class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
+      <button class="btn btn-ghost" data-go="home" data-i="back">← Home</button>
       <h2>Sphere AI Care</h2>
-      <p class="sub" data-i="care_p">Job, CV, scam, Qiwa. Not a lawyer. Not the Ministry.</p>
+      <p class="sub" data-i="care_p">Jobs, listings, scams. Not a lawyer.</p>
       <div class="card chatbox">
         <div class="msgs" id="msgs"></div>
         <form class="chat-f" id="careForm">
           <input id="careIn" data-i-ph="care_ph" placeholder="Ask…" />
-          <button class="btn btn-g" type="submit" style="width:auto">→</button>
+          <button class="btn btn-g" type="submit" style="width:auto">Go</button>
         </form>
       </div>
     </section>
   </main>
 
   <nav class="tabbar">
-    <button type="button" data-go="home"><b>⌂</b><span data-i="tab1">Home</span></button>
-    <button type="button" data-go="jobs"><b>☰</b><span data-i="tab2">Jobs</span></button>
-    <button type="button" data-go="employers"><b>+</b><span data-i="tab3">Post</span></button>
-    <button type="button" data-go="care"><b>◎</b><span data-i="tab4">AI</span></button>
-    <button type="button" data-go="resume"><b>▤</b><span data-i="tab5">CV</span></button>
+    <button type="button" data-go="home" class="on"><b>□</b><span data-i="tab1">Home</span></button>
+    <button type="button" data-go="jobs"><b>≡</b><span data-i="tab2">Jobs</span></button>
+    <button type="button" data-go="market"><b>▣</b><span data-i="tab3">Market</span></button>
+    <button type="button" data-go="sell"><b>+</b><span data-i="tab4">Sell</span></button>
+    <button type="button" data-go="care"><b>○</b><span data-i="tab5">AI</span></button>
   </nav>
-
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>
