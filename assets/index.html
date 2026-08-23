@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sphere — Jobs, market, cars, property & services in KSA</title>
+  <meta name="description" content="Sphere: independent all-in-one board for Saudi Arabia. Jobs, buy & sell, grocery, cars, property, home services. Not Amazon, Noon, Daraz or OLX." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Noto+Naskh+Arabic:wght@600&family=Noto+Nastaliq+Urdu:wght@600&display=swap" />
+  <link rel="stylesheet" href="styles.css?v=10" />
+</head>
+<body>
+  <header class="hdr">
+    <div class="wrap">
+      <div class="hdr-row">
+        <a class="brand" href="#" data-go="home"><img src="assets/logo.png" alt="" /><span>Sphere<small>All-in-one · KSA</small></span></a>
+        <button class="ghost" type="button" data-go="loc" id="locBtn">📍 Riyadh</button>
+        <button class="ghost" type="button" data-go="auth" id="authBtn">Login</button>
+        <select id="lang" class="ghost"><option value="en">EN</option><option value="ur">اردو</option><option value="ar">عربي</option></select>
+      </div>
+      <form class="searchbar" id="homeSearch">
+        <input id="q" placeholder="iPhone, Toyota, driver job, electrician…" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="view on" id="home">
+      <div class="cats">
+        <button class="cat" data-go="market" data-kind="buy"><img src="assets/icon-buy.png" alt="" /><span>Buy & Sell</span></button>
+        <button class="cat" data-go="grocery"><img src="assets/icon-grocery.png" alt="" /><span>Grocery</span></button>
+        <button class="cat" data-go="jobs"><img src="assets/icon-jobs.png" alt="" /><span>Jobs</span></button>
+        <button class="cat" data-go="cars"><img src="assets/icon-cars.png" alt="" /><span>Cars</span></button>
+        <button class="cat" data-go="property"><img src="assets/icon-property.png" alt="" /><span>Property</span></button>
+        <button class="cat" data-go="services"><img src="assets/icon-home.png" alt="" /><span>Home</span></button>
+        <button class="cat" data-go="post"><img src="assets/icon-post.png" alt="" /><span>Post ad</span></button>
+        <button class="cat" data-go="care"><img src="assets/icon-ai.png" alt="" /><span>AI Care</span></button>
+      </div>
+      <h1>One board. Work, wheels, home, daily needs.</h1>
+      <p class="lede">Independent marketplace. Not Amazon, Daraz, Noon or OLX. People list their own ads. Job seekers never pay us. SAMPLE cards are practice.</p>
+      <h2>Featured (SAMPLE)</h2>
+      <div class="cards" id="homeFeed"></div>
+      <p class="notice">Brand names belong to their owners. We do not copy another shop’s catalogue. Payment and live chat come later.</p>
+    </section>
+
+    <section class="view" id="market">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2 id="marketTitle">Buy & Sell</h2>
+      <div class="filters">
+        <select id="sortM"><option value="new">Newest</option><option value="price">Price</option></select>
+        <select id="cityM"><option value="">All cities</option><option>Riyadh</option><option>Jeddah</option><option>Dammam</option><option>Makkah</option></select>
+      </div>
+      <div class="cards" id="marketList"></div>
+    </section>
+
+    <section class="view" id="grocery">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Grocery</h2>
+      <p class="sub">Demo basket on this phone only. No real checkout yet.</p>
+      <div class="cards" id="grocList"></div>
+      <div class="panel" id="cartBox"><h2>Cart</h2><div id="cartLines"></div><p id="cartTotal"></p></div>
+    </section>
+
+    <section class="view" id="jobs">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Jobs</h2>
+      <div class="filters">
+        <select id="cityJ"><option value="">All cities</option><option>Riyadh</option><option>Jeddah</option><option>Dammam</option></select>
+        <select id="visaJ"><option value="">Visa</option><option>Transfer</option><option>New visa</option><option>Saudi</option></select>
+      </div>
+      <div class="cards" id="jobList" style="grid-template-columns:1fr"></div>
+    </section>
+
+    <section class="view" id="cars">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Cars — sale & rent</h2>
+      <div class="cards" id="carList"></div>
+    </section>
+
+    <section class="view" id="property">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Property</h2>
+      <div class="cards" id="propList"></div>
+    </section>
+
+    <section class="view" id="services">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Home & other services</h2>
+      <div class="cards" id="svcList" style="grid-template-columns:1fr"></div>
+    </section>
+
+    <section class="view" id="post">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Post an ad</h2>
+      <p class="sub">Hidden until review. Only list what you have the right to sell. No fake brands.</p>
+      <form class="panel" id="postForm">
+        <div class="field"><label>Type</label>
+          <select name="sec">
+            <option value="buy">Buy & Sell</option>
+            <option value="grocery">Grocery</option>
+            <option value="job">Job</option>
+            <option value="car">Car</option>
+            <option value="property">Property</option>
+            <option value="service">Home service</option>
+          </select>
+        </div>
+        <div class="field"><label>Title</label><input name="title" required /></div>
+        <div class="row2">
+          <div class="field"><label>City</label><input name="city" required /></div>
+          <div class="field"><label>Price / salary</label><input name="price" /></div>
+        </div>
+        <div class="field"><label>Your name</label><input name="seller" required /></div>
+        <div class="field"><label>WhatsApp</label><input name="phone" required /></div>
+        <div class="field"><label>Details</label><textarea name="blurb" rows="4"></textarea></div>
+        <p class="notice">No Iqama/passport photos. No payment on this form.</p>
+        <button class="btn btn-g" type="submit">Submit for review</button>
+        <p class="meta" id="postMsg"></p>
+      </form>
+    </section>
+
+    <section class="view" id="detail"></section>
+
+    <section class="view" id="auth">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Login / Sign up</h2>
+      <p class="sub">Saved only on this phone (demo). Not a bank-grade account.</p>
+      <form class="panel" id="regForm">
+        <div class="field"><label>Name</label><input name="name" required /></div>
+        <div class="field"><label>Mobile</label><input name="mobile" required /></div>
+        <div class="field"><label>Email</label><input name="email" type="email" /></div>
+        <div class="field"><label>Password</label><input name="pass" type="password" required /></div>
+        <div class="field"><label>City</label><input name="city" /></div>
+        <button class="btn btn-g" type="submit">Create / Login</button>
+      </form>
+    </section>
+
+    <section class="view" id="dash">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>My Sphere</h2>
+      <div class="panel" id="dashBox"></div>
+    </section>
+
+    <section class="view" id="inbox">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Messages</h2>
+      <p class="sub">Not live chat yet. Notes stay on this phone.</p>
+      <div class="panel chatbox">
+        <div class="msgs" id="inboxMsgs"></div>
+        <form class="chat-f" id="inboxForm">
+          <input id="inboxIn" placeholder="Write to seller…" />
+          <button class="btn btn-g" type="submit" style="width:auto">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="view" id="resume">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Free CV</h2>
+      <form class="panel" id="cvForm">
+        <div class="field"><label>Name</label><input name="name" required /></div>
+        <div class="row2">
+          <div class="field"><label>City</label><input name="city" /></div>
+          <div class="field"><label>Visa</label><input name="visa" /></div>
+        </div>
+        <div class="field"><label>Job</label><input name="role" /></div>
+        <div class="field"><label>Skills</label><input name="skills" /></div>
+        <div class="field"><label>Experience</label><textarea name="exp" rows="3"></textarea></div>
+        <button class="btn btn-g" type="submit">Build</button>
+      </form>
+      <div class="panel" id="cvOut"></div>
+    </section>
+
+    <section class="view" id="care">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Sphere AI Care</h2>
+      <p class="sub">Helper for jobs, ads and scams. Not a lawyer. Not ChatGPT.</p>
+      <div class="panel chatbox">
+        <div class="msgs" id="msgs"></div>
+        <form class="chat-f" id="careForm">
+          <input id="careIn" placeholder="Ask…" />
+          <button class="btn btn-g" type="submit" style="width:auto">Go</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="view" id="legal">
+      <button class="btn btn-line" data-go="home">← Home</button>
+      <h2>Legal</h2>
+      <div class="panel">
+        <p>Sphere is independent. Not Amazon, Daraz, Noon, OLX, Haraj or Qiwa.</p>
+        <p>Users list their own ads. SAMPLE is practice. Job seekers: 0 fee to us.</p>
+        <p>No payment gateway in this version. Chat is not real-time.</p>
+        <p>Do not upload Iqama/passport. Check cars and property papers yourself.</p>
+        <p>Founder: Ajlal Khan.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="tabbar">
+    <button type="button" class="on" data-go="home"><b>□</b>Home</button>
+    <button type="button" data-go="jobs"><b>≡</b>Jobs</button>
+    <button type="button" data-go="market"><b>▣</b>Market</button>
+    <button type="button" data-go="post"><b>+</b>Post</button>
+    <button type="button" data-go="care"><b>○</b>AI</button>
+  </nav>
+  <script src="app.js?v=10"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2fd74bf7a79e229',t:'MTc4NzUyMzExNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
